@@ -1,9 +1,8 @@
 FROM alpine:latest
 
-WORKDIR /images
-COPY . .
+WORKDIR /data
 
 RUN apk --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing add \
   cloud-utils
 
-CMD ["/usr/bin/cloud-localds"]
+ENTRYPOINT ["/usr/bin/cloud-localds"]
